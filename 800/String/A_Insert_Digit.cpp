@@ -5,11 +5,6 @@ void solution()
     int n,x;cin >> n >> x;
     string str;cin >> str;
     bool flag = true;
-    if(str[0]-'0' < x)
-    {
-        cout << x << str << endl;
-        return;
-    }
     for(int i = 0; i < n; i++)
     {
         if(str[i]-'0' < x && flag == true)
