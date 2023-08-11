@@ -5,7 +5,7 @@ using namespace std;
 #define int long long int
 
 // custom comparison function
-// Concept : GCD of two odd numbers will always be greater than 1
+// Concept : GCD of two even numbers will always be greater than 1
 bool cmp(int x , int y)
 {
     return (x % 2) < (y % 2); // for sorting the array such that even elements comes first then odd elements
