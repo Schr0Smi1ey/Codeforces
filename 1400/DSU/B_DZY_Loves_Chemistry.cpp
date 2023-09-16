@@ -3,32 +3,35 @@ using namespace std;
 #define fastio ios_base::sync_with_stdio(false),cin.tie(0),cout.tie(0);
 #define endl "\n"
 #define int long long int
-const int N = 1e5 + 5;
-vector<int> parent,Size;
-int mx = 0;
+const int N = 55;
+vector<int> Size, parent;
+int danger = 1;
 int findUPar(int node)
 {
-    if(node == parent[node])
-    return node;
+    if (parent[node] == node)
+        return node;
     return parent[node] = findUPar(parent[node]);
 }
 signed main()
 {
     fastio;
-    int n,e;cin >> n >> e;
-    Size.resize(n+1,1);
-    parent.resize(n+1);
-    for(int i=0;i<=n;i++)
-    parent[i] = i;
-    int cmp = n;
-    while(e--)
+    int n, e; cin >> n >> e;
+    Size.resize(n + 1, 2);
+    parent.resize(n + 1);
+    for (int i = 0; i <= n; i++)
     {
-        int u,v;cin >> u >> v;
-        int pu = findUPar(u),pv = findUPar(v);
-        parent[pu] = pv;
-        if(pu != pv)
-        cmp--; 
+        parent[i] = i;
     }
-    cout << (1LL << (n-cmp)); // just got error for not using the LL with 1
+    while (e--)
+    {
+        int u, v; cin >> u >> v;
+        int pu = findUPar(u),pv = findUPar(v);
+        if(pu != pv)
+        {
+            danger *= 2; // if reaction is possible multiply the danger by two
+            parent[pu] = pv;
+        }
+    }
+    cout << danger ;
     return 0;
 }
