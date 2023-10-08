@@ -72,3 +72,44 @@ signed main()
         solution();
     }
 }
+
+// optimized
+///optimized
+#include<bits/stdc++.h>
+using namespace std;
+#define fastio ios_base::sync_with_stdio(false),cin.tie(0),cout.tie(0);
+#define endl "\n"
+#define int long long int
+const int INF = 1e18;
+void solution(){
+    int n;cin >> n;
+    string str[n*3 + 1];
+    map<string,int> mp;
+    for(int i=0;i<n*3;i++){
+        cin >> str[i];
+        mp[str[i]]++;
+    }
+    int s = 0;
+    for(int i=0;i<n*3;i++){
+        if(mp[str[i]] == 1){
+            s+= 3;
+        }
+        else if(mp[str[i]] == 2){
+            s++;
+        }
+        if((i+1) % n ==0){
+            cout << s << " ";
+            s = 0;
+        }
+    }
+    cout << endl;
+}
+signed main()
+{
+    fastio;
+    int t;cin >> t;
+    while(t--){
+        solution();
+    }
+    return 0;
+}
