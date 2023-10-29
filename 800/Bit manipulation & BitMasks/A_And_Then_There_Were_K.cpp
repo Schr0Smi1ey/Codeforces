@@ -7,16 +7,17 @@ using namespace std;
 signed main()
 {
     fastio;
-    int n;cin >> n;
-    string str;cin >> str;
-    int cnt = 0;
-    for(int i=1;i<n;i+=2){
-        if(str[i] == str[i-1])
-        {
-            cnt++;
-            str[i] = (str[i-1]=='a')?'b':'a';
+    int t;cin >> t;
+    while(t--){
+        int n;cin >> n;
+        int temp = 1;
+        while(true){
+            if((temp << 1) > n){
+                break;
+            }
+            temp <<= 1;
         }
+        cout << temp - 1 << endl;
     }
-    cout << cnt << endl << str << endl;
     return 0;
 }

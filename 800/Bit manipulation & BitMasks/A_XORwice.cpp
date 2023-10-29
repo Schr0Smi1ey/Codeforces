@@ -7,16 +7,10 @@ using namespace std;
 signed main()
 {
     fastio;
-    int n;cin >> n;
-    string str;cin >> str;
-    int cnt = 0;
-    for(int i=1;i<n;i+=2){
-        if(str[i] == str[i-1])
-        {
-            cnt++;
-            str[i] = (str[i-1]=='a')?'b':'a';
-        }
+    int t;cin >> t;
+    while(t--){
+        int a,b;cin >> a >> b;
+        cout << ((max(a,b))^(min(a,b))) << endl;
     }
-    cout << cnt << endl << str << endl;
     return 0;
 }
