@@ -19,24 +19,23 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag,
 const int MOD = 1e9 + 7;
 const int INF = 1e18, MINF = -1e18;
 const int N = 2e5 + 5;
-void ss(int a,string &c){
-    int k = 10;
-    while(a){
-        int x = (a%10);
-        a /= 10;
-        if(x == 0)continue;
-        c[k--] = (x + '0');
-    }
-}
+
 void solution() {
-    int a,b;cin >> a >> b;
-    int ans = a+b;
-    string c(11,'0'),d(11,'0'),e(11,'0');
-    ss(a,c);ss(b,d);ss(ans,e);
-    if(stoll(c) + stoll(d) == stoll(e))
-    cout << "YES";
+    int n;cin >> n;
+    string a,b,c;cin >> a >> b >> c;
+    if(a == c || b == c){
+        cout << "NO" << endl;
+        return;
+    }
+    bool flag = true;
+    for(int i=0;i<n;i++){
+        flag &= (c[i] == a[i] || c[i] == b[i]);
+    }
+    if(flag){
+        cout << "NO" << endl;
+    }
     else{
-        cout << "NO";
+        cout << "YES" << endl;
     }
 }
 
@@ -45,6 +44,7 @@ int32_t main() {
     fastio;
     #endif
     int t = 1;
+    cin >> t;
     while(t--) {
         solution();
     }
