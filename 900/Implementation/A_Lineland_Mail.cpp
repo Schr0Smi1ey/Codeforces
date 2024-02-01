@@ -26,25 +26,17 @@ void solution() {
     for(int i=0;i<n;i++){
         cin >> arr[i];
     }
-    int m,x,y;cin >> m;
-    while(m--){
-        cin >> x >> y;x--;
-        if(x == 0){
-            arr[x + 1] += arr[x] - y;
-            arr[x] = 0;
+    sort(arr,arr+n);
+    for(int i=0;i<n;i++){
+        if(i == 0){
+            cout << abs(arr[i] - arr[i+1]) << " " << abs(arr[i] - arr[n-1]) << endl;
         }
-        else if(x == n - 1){
-            arr[x - 1] += y-1;
-            arr[x] = 0;
+        else if(i == n-1){
+            cout << abs(arr[i] - arr[i-1]) << " " << abs(arr[i] - arr[0]) << endl;
         }
         else{
-            arr[x-1] += y - 1;
-            arr[x+1] += arr[x] - y;
-            arr[x] = 0;
+            cout << min(abs(arr[i] - arr[i-1]),abs(arr[i]-arr[i+1])) << " " << max(abs(arr[i] - arr[0]),abs(arr[n-1]-arr[i])) << endl;
         }
-    }
-    for(auto x : arr){
-        cout << x << endl;
     }
 }
 
@@ -53,6 +45,7 @@ int32_t main() {
     fastio;
     #endif
     int t = 1;
+    // cin >> t;
     while(t--) {
         solution();
     }

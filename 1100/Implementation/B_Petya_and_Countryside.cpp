@@ -26,26 +26,19 @@ void solution() {
     for(int i=0;i<n;i++){
         cin >> arr[i];
     }
-    int m,x,y;cin >> m;
-    while(m--){
-        cin >> x >> y;x--;
-        if(x == 0){
-            arr[x + 1] += arr[x] - y;
-            arr[x] = 0;
+    int ans = 1;
+    for(int i=0;i<n;i++){
+        int temp = 1,now = i,l = i - 1,r = i+1;
+        while(l >= 0 && now >= 1 && arr[now] >= arr[l]){
+            temp++;l--;now--;
         }
-        else if(x == n - 1){
-            arr[x - 1] += y-1;
-            arr[x] = 0;
+        now = i;
+        while(r < n && now < n-1 && arr[now] >= arr[r]){
+            temp++;r++;now++;
         }
-        else{
-            arr[x-1] += y - 1;
-            arr[x+1] += arr[x] - y;
-            arr[x] = 0;
-        }
+        ans = max(ans,temp);
     }
-    for(auto x : arr){
-        cout << x << endl;
-    }
+    cout << ans;
 }
 
 int32_t main() {

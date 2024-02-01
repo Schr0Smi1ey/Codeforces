@@ -22,30 +22,25 @@ const int N = 2e5 + 5;
 
 void solution() {
     int n;cin >> n;
-    int arr[n];
+    string str;cin >> str;
+    string ans = "";
     for(int i=0;i<n;i++){
-        cin >> arr[i];
-    }
-    int m,x,y;cin >> m;
-    while(m--){
-        cin >> x >> y;x--;
-        if(x == 0){
-            arr[x + 1] += arr[x] - y;
-            arr[x] = 0;
+        if(str[i] == '0' || str[i] == '1') continue;
+        if(str[i] == '4'){
+            ans += "223";
         }
-        else if(x == n - 1){
-            arr[x - 1] += y-1;
-            arr[x] = 0;
+        else if(str[i] == '6'){
+            ans += "35";
+        }
+        else if(str[i] == '8'){
+            ans += "2227";
         }
         else{
-            arr[x-1] += y - 1;
-            arr[x+1] += arr[x] - y;
-            arr[x] = 0;
+            ans += str[i];
         }
     }
-    for(auto x : arr){
-        cout << x << endl;
-    }
+    sort(ans.rbegin(),ans.rend());
+    cout << ans; 
 }
 
 int32_t main() {

@@ -26,25 +26,15 @@ void solution() {
     for(int i=0;i<n;i++){
         cin >> arr[i];
     }
-    int m,x,y;cin >> m;
-    while(m--){
-        cin >> x >> y;x--;
-        if(x == 0){
-            arr[x + 1] += arr[x] - y;
-            arr[x] = 0;
+    int k = n;
+    priority_queue<int> pq;
+    for(int i = 0;i<n;i++){
+        pq.push(arr[i]);
+        while(!pq.empty() && pq.top() == k){
+            cout << k << " ";
+            k--;pq.pop();
         }
-        else if(x == n - 1){
-            arr[x - 1] += y-1;
-            arr[x] = 0;
-        }
-        else{
-            arr[x-1] += y - 1;
-            arr[x+1] += arr[x] - y;
-            arr[x] = 0;
-        }
-    }
-    for(auto x : arr){
-        cout << x << endl;
+        cout << endl;
     }
 }
 
@@ -53,6 +43,7 @@ int32_t main() {
     fastio;
     #endif
     int t = 1;
+    // cin >> t;
     while(t--) {
         solution();
     }
