@@ -21,38 +21,21 @@ const int INF = 1e18, MINF = -1e18;
 const int N = 2e5 + 5;
 
 void solution() {
-    vector<string> v(3);
-    int a = 0,b = 0, c = 0;
-    for(int i=0;i<3;i++){
-        cin >> v[i];
-        if(v[i][1] == '<'){
-            swap(v[i][0],v[i][2]);
-            v[i][1] = '>';
-        }
-        if(v[i][0] == 'A') a++;
-        else if(v[i][0] == 'B') b++;
-        else c++;
+    int n;
+    cin>>n;
+    if(n == 0) // ***** corner case...
+    puts("1");
+    else{
+        // do it manually in paper pen...you will have a pattern of this following code
+        if(n % 4 == 0)
+        puts("6"); 
+        else if(n % 4 == 1)
+        puts("8");
+        else if(n % 4 == 2)
+        puts("4");
+        else if(n % 4 == 3)
+        puts("2");
     }
-    string ans = "Impossible";
-    if(a == 2){
-        ans = "A";
-        if(b == 1){
-            ans += "BC";
-        }
-        if(c == 1) ans += "CB";
-    }
-    if(b == 2){
-        ans = "B";
-        if(a == 1) ans += "AC";
-        if(c == 1) ans += "CA";
-    }
-    if(c == 2){
-        ans = "C";
-        if(a == 1) ans += "AB";
-        if(b == 1) ans += "BA";
-    }
-    if(ans != "Impossible") reverse(ans.begin(),ans.end());
-    cout << ans;
 }
 
 int32_t main() {
@@ -60,6 +43,7 @@ int32_t main() {
     fastio;
     #endif
     int t = 1;
+    cin >> t;
     while(t--) {
         solution();
     }

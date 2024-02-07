@@ -21,38 +21,28 @@ const int INF = 1e18, MINF = -1e18;
 const int N = 2e5 + 5;
 
 void solution() {
-    vector<string> v(3);
-    int a = 0,b = 0, c = 0;
-    for(int i=0;i<3;i++){
-        cin >> v[i];
-        if(v[i][1] == '<'){
-            swap(v[i][0],v[i][2]);
-            v[i][1] = '>';
+    int n;cin >> n;
+    vector<int> three;
+    int minima = INT_MAX,maxima = INT_MIN;
+    for(int i=0,x,y;i<n;i++){
+        cin >> x >> y;
+        if(x == 1){
+            maxima = max(maxima,y);
         }
-        if(v[i][0] == 'A') a++;
-        else if(v[i][0] == 'B') b++;
-        else c++;
-    }
-    string ans = "Impossible";
-    if(a == 2){
-        ans = "A";
-        if(b == 1){
-            ans += "BC";
+        else if(x == 2){
+            minima = min(minima,y);
         }
-        if(c == 1) ans += "CB";
+        else{
+            three.push_back(y);
+        }
     }
-    if(b == 2){
-        ans = "B";
-        if(a == 1) ans += "AC";
-        if(c == 1) ans += "CA";
-    }
-    if(c == 2){
-        ans = "C";
-        if(a == 1) ans += "AB";
-        if(b == 1) ans += "BA";
-    }
-    if(ans != "Impossible") reverse(ans.begin(),ans.end());
-    cout << ans;
+    int ans = max(0LL,minima - maxima + 1);
+    for(auto x : three){
+        if(x >= maxima && x <=  minima){
+            ans--;
+        }
+    } 
+    cout << max(0LL,ans) << endl;
 }
 
 int32_t main() {
@@ -60,6 +50,7 @@ int32_t main() {
     fastio;
     #endif
     int t = 1;
+    cin >> t;
     while(t--) {
         solution();
     }
