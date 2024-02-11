@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-// casimir's string solitaire
 int main()
 {
     int t;

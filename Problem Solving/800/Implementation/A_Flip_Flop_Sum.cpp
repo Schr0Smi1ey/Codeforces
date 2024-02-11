@@ -2,8 +2,7 @@
 using namespace std;
 #define endl "\n"
 #define ll long long int
-void solution()
-{
+void solution(){
     int n;
     cin>>n;
     int arr[n];
@@ -29,8 +28,7 @@ void solution()
     else
     cout<<sum<<endl;
 }
-int main()
-{
+int main(){
     int t;
     cin>>t;
     while(t--)

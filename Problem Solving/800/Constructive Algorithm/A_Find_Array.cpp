@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-void solution()
-{
+void solution(){
     int n;cin>>n;int x = 2;
     for(int i=0;i<n;i++)
     {
@@ -10,8 +9,7 @@ void solution()
     }
     cout<<endl;
 }
-signed main()
-{
+signed main(){
     int t;cin>>t;
     while(t--)
     {

@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-// erasing zeroes
 int main()
 {
     string str;

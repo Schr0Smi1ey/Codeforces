@@ -68,3 +68,5 @@ int32_t main() {
     }
     return 0;
 }
+
+https://codeforces.com/problemset/problem/546/C

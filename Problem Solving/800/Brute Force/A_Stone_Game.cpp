@@ -3,8 +3,6 @@
 #include<stdlib.h>
 #include<math.h>
 using namespace std;
-// stone game
-// accepted solution 
 int main()
 {
     int t;

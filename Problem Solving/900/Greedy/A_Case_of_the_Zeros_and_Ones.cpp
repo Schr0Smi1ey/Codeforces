@@ -1,8 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-//case of the zeros and ones
-int main()
-{
+
+int main(){
     int n;
     cin>>n;
     char str[n+1];

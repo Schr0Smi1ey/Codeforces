@@ -7,8 +7,7 @@ using namespace std;
 void solution()
 {
     int n;cin>>n;
-    while(true)
-    {
+    while(true){
         if(n%10==0)
         break;
         if(n%7==0)
@@ -18,8 +17,7 @@ void solution()
         }
         n--;
     }
-    while(true)
-    {
+    while(true){
         if(n%7==0)
         {
             cout<<n<<endl;
@@ -28,8 +26,7 @@ void solution()
         n++;
     }
 }
-signed main()
-{
+signed main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);

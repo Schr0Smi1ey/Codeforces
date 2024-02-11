@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-// blackboard list
 int main()
 {
     int t;

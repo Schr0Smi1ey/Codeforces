@@ -1,13 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-// vus the cossack and a contest
-int main()
-{
-    int m,k,n;
-    cin>>n>>m>>k;
-    if(m>=n && k>=n)
-    cout<<"Yes";
+
+int main() {
+    int m, k, n;
+    cin >> n >> m >> k;
+    if (m >= n && k >= n)
+        cout << "Yes" << endl;
     else
-    cout<<"No";
+        cout << "No" << endl;
     return 0;
 }

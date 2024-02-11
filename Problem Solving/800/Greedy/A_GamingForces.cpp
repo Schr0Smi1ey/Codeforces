@@ -1,28 +1,27 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+
 #define endl "\n"
 #define ll long long int
-void solution()
-{
+
+void solution() {
     int n;
-    cin>>n;
-    int x,one=0,other=0;
-    while(n--)
-    {
-        cin>>x;
-        if(x==1)
-        one++;
+    cin >> n;
+    int x, one = 0, other = 0;
+    while (n--) {
+        cin >> x;
+        if (x == 1)
+            one++;
         else 
-        other++;
+            other++;
     }
-    cout<<(other+one/2+one%2)<<endl;
+    cout << (other + one / 2 + one % 2) << endl;
 }
-int main()
-{
+
+int main() {
     int t;
-    cin>>t;
-    while(t--)
-    {
+    cin >> t;
+    while (t--) {
         solution();
     }
     return 0;
