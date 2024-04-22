@@ -22,7 +22,7 @@ void solution() {
         }
         i++;j--;
     }
-    if(flag){
+    if(flag){ // if palindrome
         if(zero == 0){
             cout << "DRAW" << endl;
         }
