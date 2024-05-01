@@ -7,24 +7,24 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18, MINF = -1e18;
 const int N = 2e5 + 5;
 
-int Max(int *arr,int n,int k) {
-    int low = 0LL,high = 1e17,ans = -1LL;
+int Search(int *arr,int n,int k) {
+    int low = 0,high = 1e17,ans = -1;
     while(low <= high) {
-        int mid = low + (high - low) / 2LL;
-        int cnt = 0LL,i = 0LL,temp = k;
+        int mid = low + (high - low) / 2;
+        int cnt = 0,i = 0,temp = k;
         for(i = 0;i < n;i++) {
             if(arr[i] < mid){
                 temp -= abs(arr[i] - mid);
-                if(temp < 0LL){
+                if(temp < 0){
                     break;
                 }
             }
         }
-        if(i == n && temp >= 0LL) {
-            low = mid + 1LL;
+        if(i == n && temp >= 0) {
+            low = mid + 1;
             ans = mid;
         } else {
-            high = mid - 1LL;
+            high = mid - 1;
         }
     }
     return ans;
@@ -35,27 +35,21 @@ void solution() {
     for(int i = 0;i < n;i++){
         cin >> arr[i];
     }
-    if(n == 5000){
-        for(int i = 0;i < n;i++){
-        cout << arr[i] << " ";
-        }
-        cout << endl;
-    }
-    int flag = Max(arr,n,k);
+    int flag = Search(arr,n,k);
     priority_queue<int, vector<int>, greater<int>> pq;
     for(int i = 0;i < n;i++){
         if(arr[i] < flag){
             k -= abs(flag - arr[i]);
-            arr[i] = 0LL;
+            arr[i] = 0;
         }
         else{
             arr[i] -= flag;
         }
         pq.push(arr[i]);
     }
-    int ans = (flag * n) - (n - 1LL);
-    int zcnt = 0LL;
-    while(!pq.empty() && pq.top() == 0LL){
+    int ans = (flag * n) - (n - 1);
+    int zcnt = 0;
+    while(!pq.empty() && pq.top() == 0){
         pq.pop();
         zcnt++;
     }
@@ -63,7 +57,7 @@ void solution() {
     ans += min(zcnt,k);
     k -= min(zcnt,k);
     while(k > 0 && !pq.empty()){
-        while(!pq.empty() && (pq.top() - 1LL == 0LL)){
+        while(!pq.empty() && (pq.top() - 1 == 0)){
             pq.pop();
             zcnt++;
         }
