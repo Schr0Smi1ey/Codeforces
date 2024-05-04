@@ -31,7 +31,6 @@ void solution() {
     }
     int sasha = best_score(per,arr,n,k,s);
     int boda = best_score(per,arr,n,k,b);
-    cout << "test : " << sasha << " " << boda << endl;
     if(sasha == boda){
         cout << "Draw" << endl;
     }

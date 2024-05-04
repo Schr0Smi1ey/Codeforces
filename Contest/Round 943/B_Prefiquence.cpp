@@ -20,7 +20,6 @@ void solution() {
                 break;
             }
         }
-        // cout << "test : " << last << " " << i << endl;
         if(j == m){
             break;
         }
