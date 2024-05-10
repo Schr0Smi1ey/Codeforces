@@ -7,20 +7,6 @@ const int MOD = 1e9 + 7;
 const int INF = 1e18, MINF = -1e18;
 const int N = 2e5 + 5;
 
-int search(int *dis,int k,int val){
-    int low = 0, high = k - 1,ans = -1;
-    while(low <= high){
-        int mid = low + (high - low)/2;
-        if(dis[mid] >= val){
-            ans = mid;
-            high = mid - 1;
-        }
-        else{
-            low = mid + 1;
-        }
-    }
-    return ans;
-}
 void solution() {
     int n,k,q;cin >> n >> k >> q;
     int dis[k],time[k],temp[k];
