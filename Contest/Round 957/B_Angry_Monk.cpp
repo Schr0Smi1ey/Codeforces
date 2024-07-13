@@ -1,3 +1,5 @@
+// Upsolved
+
 #include <bits/stdc++.h>
 using namespace std;
 #define fastio ios_base::sync_with_stdio(false),cin.tie(0),cout.tie(0);
@@ -8,25 +10,23 @@ const int INF = 1e18, MINF = -1e18;
 const int N = 2e5 + 5;
 
 void solution() {
-    int n,m;cin >> n >> m;
-    int sum = 0;
-    int arr[n];
-    for(int i = 0;i < n;i++) cin >> arr[i];
-    sort(arr,arr + n);
-    for(int i = 0;i < n;i++){
-        if(m > 0 && arr[i] < 0){
-            if(arr[i] < 0){
-                sum += abs(arr[i]);
-                m--;
-            }
-        }
+    int n,k;cin >> n >> k;
+    int arr[k];
+    for(int i = 0;i < k;i++){
+        cin >> arr[i];
     }
-    cout << sum;
+    sort(arr,arr + k);
+    int ans = 0;
+    for(int i = 0;i < k - 1;i++){
+        ans += (arr[i]-1) + arr[i];
+    }
+    cout << ans << endl;
 }
 
 int32_t main() {
     fastio;
     int t = 1;
+    cin >> t;
     while(t--) {
         solution();
     }
