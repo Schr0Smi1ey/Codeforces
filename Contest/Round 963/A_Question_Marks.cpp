@@ -1,4 +1,3 @@
-// Upsolved
 #include <bits/stdc++.h>
 using namespace std;
 #define fastio ios_base::sync_with_stdio(false),cin.tie(0),cout.tie(0);
@@ -9,13 +8,18 @@ const int INF = 1e18, MINF = -1e18;
 const int N = 2e5 + 5;
 
 void solution() {
-    int a,b,c;cin >> a >> b >> c;
-    for(int i = 0;i < 5;i++){
-        if(a <= b && a <= c) a++;
-        else if(b <= a && b <= c) b++;
-        else c++;
+    int n;cin >> n;
+    string str;cin >> str;
+    int a,b,c,d;
+    a = b = c = d = 0;
+    for(auto ch : str){
+        a += (ch == 'A');
+        b += (ch == 'B');
+        c += (ch == 'C');
+        d += (ch == 'D');
     }
-    cout << a*b*c << endl;
+    int ans = min(a,n) + min(b,n) + min(c,n) + min(d,n);
+    cout << ans << endl;
 }
 
 int32_t main() {
