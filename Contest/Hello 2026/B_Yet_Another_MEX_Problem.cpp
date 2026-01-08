@@ -34,16 +34,13 @@ int mex(const set<int>& a) {
 
 void solution() {
     int n, k; cin >> n >> k;
-    vector<int> v(n);
     set<int> st;
-    for(int i = 0;i < n;i++) {
-        cin >> v[i];
-        st.insert(v[i]);
+    for(int i = 0, x;i < n;i++) {
+        cin >> x;
+        st.insert(x);
     }
-    if(st.size() > k - 1) {
-        while (st.size() > k - 1) {
-            st.erase(prev(st.end())); 
-        }
+    while (st.size() > k - 1) {
+        st.erase(prev(st.end())); 
     }
     cout << mex(st) << endl;
 }

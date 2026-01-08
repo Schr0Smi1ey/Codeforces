@@ -20,12 +20,7 @@ void solution() {
     for(int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-    if(arr[0] == 1 || arr[n - 1] == 1) {
-        cout << "Alice" << endl;
-    }
-    else {
-        cout << "Bob" << endl;
-    }
+    cout << (arr[0] || arr[n - 1] ? "Alice": "Bob") << endl;
 }
 
 int32_t main() {

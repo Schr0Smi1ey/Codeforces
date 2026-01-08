@@ -15,22 +15,22 @@ const int INF = 1e18, MINF = -1e18;
 const int N = 2e5 + 5;
 
 void solution() {
-    long long n, m, k;
+    int n, m, k;
     cin >> n >> m >> k;
-    long long mLeft = k - 1, mRight = n - k, ans = 1; 
+    int mLeft = k - 1, mRight = n - k, ans = 1; 
 
-    for (long long l = 1; l <= n ; l++) {
-        long long cost = 2 * l - 1;
+    for (int l = 1; l <= n ; l++) {
+        int cost = 2 * l - 1;
         if (cost > m) break;
-        long long rem = m - cost;   
+        int rem = m - cost;   
 
         if (l <= mLeft) {
-            long long r = min({l, mRight, rem});
+            int r = min({l, mRight, rem});
             ans = max(ans, l + r + 1);
         }
 
         if (l <= mRight) {
-            long long r = min({l, mLeft, rem});
+            int r = min({l, mLeft, rem});
             ans = max(ans, l + r + 1);
         }
     }
